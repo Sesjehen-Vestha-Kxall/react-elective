@@ -8,26 +8,26 @@
 </head>
 <body>
     <script>
-        //script scope (global)
-        var a = 'g window';
-
-        console.log(a);
-
-        {//block scope
-            let a = 'b scope';
-            console.log(a);
-        }
-
-        console.log(a);
-        console.log(window);
-
         // avoid var declarations. Variables declared with 'var'
         // are 'elevated' to the global scope and can override some predefined
         // values which the browser has in the window.
 
+        //created on global scope
+        var a = 'g window';
+
+        console.log(a);
+
+        {//created on code-block scope
+            let a = 'b scope';
+            console.log(a);
+        }//doesn't override 'var a' outside these braces
+
+        console.log(a);
+
         // you can check it by doing right-click => inspect element => console
-        // > window // <- you must write this in the console to see the window object
+        // you must write this to see the window object
         // and looking for the variable you have created.
+        console.log(window);
     </script>
 </body>
 </html>
