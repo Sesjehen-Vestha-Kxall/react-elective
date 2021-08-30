@@ -20,6 +20,14 @@
 
         console.log(a);
         console.log(window);
+
+        // avoid var declarations. Variables declared with 'var'
+        // are 'elevated' to the global scope and can override some predefined
+        // values which the browser has in the window.
+
+        // you can check it by doing right-click => inspect element => console
+        // > window // <- you must write this in the console to see the window object
+        // and looking for the variable you have created.
     </script>
 </body>
 </html>
