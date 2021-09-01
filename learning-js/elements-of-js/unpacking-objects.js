@@ -43,8 +43,6 @@ const pairKV = {
 unpackObject(pairKV);
 //unpackObject(book);
 
-/*
 pairKV.hobbies.forEach(function(x, i) {
     console.log(`[${i}]: ${x}`);
 });
-*/

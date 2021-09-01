@@ -2,7 +2,6 @@ function print(text) {
     return console.log(text)
 }
 
-let grade = 5;
+let wasGood = false;
 
-const res =  print(grade == 5? 'gud' : 'not gud');
-
+const res =  print(wasGood? 'it was good' : 'it wasn\'t good');
