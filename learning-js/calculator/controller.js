@@ -1,12 +1,12 @@
-function getValues() {
+function getValues(idA = 'number-a', idB = 'number-b') {
     return [
-        parseFloat(document.getElementById('number-a').value),
-        parseFloat(document.getElementById('number-b').value)
+        parseFloat(document.getElementById(idA)?.value),
+        parseFloat(document.getElementById(idB)?.value)
     ]
 }
 
 function operate(op) {
-    let r = 0;
+    let r;
     let [a, b] = getValues();
     switch (op) {
         case '+': r = a + b; break;
@@ -14,7 +14,7 @@ function operate(op) {
         case '*': r = a * b; break;
         case '/': r = a / b;
     }
-    document.getElementById('result').textContent = `result: ${r}`;
+    document.getElementById('result').textContent = `result: ${r !== 0? r || 'Undefined!' : 0}`;
 }
 
 document.getElementById('sum').onclick = () => operate('+');

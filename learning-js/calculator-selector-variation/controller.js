@@ -5,15 +5,13 @@ const N2 = 'number-b';
 
 function getValues() {
     return [
-        parseFloat(document.getElementById(N1).value),
-        parseFloat(document.getElementById(N2).value)
+        parseFloat(document.getElementById(N1).value) || 0,
+        parseFloat(document.getElementById(N2).value) || 0
     ];
 }
 
 document.getElementById(SELECTOR).onchange = () => {
     let [a, b] = getValues();
-
-    if (isNaN(a) || isNaN(b)) return;
 
     switch (document.getElementById(SELECTOR).value) {
         case '+': r = a + b; break;

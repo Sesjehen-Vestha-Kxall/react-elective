@@ -5,6 +5,9 @@ console.log(null ?? 'default string');
 console.log('' ?? 'not null');
 
 
+console.log(false ?? 'not null');
+
+
 console.log(0 ?? 42);
 
 
