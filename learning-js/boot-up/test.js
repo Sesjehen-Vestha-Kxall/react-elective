@@ -8,7 +8,7 @@ let print = (s) => console.log(s);
 let greeting = (subject) => `Hello ${subject}!`;
 let multiply = (a, b) => a * b;
 
-const xRand = Math.random()
+const xRand = Math.random();
 const x = Math.round(xRand * 100);
 
 document.getElementById('text-source').innerHTML =
