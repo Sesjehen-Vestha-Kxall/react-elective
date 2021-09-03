@@ -1,7 +1,7 @@
-function getValues() {
+function getValues(idA = 'number-a', idB = 'number-b') {
     return [
-        parseFloat(document.getElementById('number-a')?.value),
-        parseFloat(document.getElementById('number-b')?.value)
+        parseFloat(document.getElementById(idA)?.value),
+        parseFloat(document.getElementById(idB)?.value)
     ]
 }
 
@@ -14,7 +14,10 @@ function operate(op) {
         case '*': r = a * b; break;
         case '/': r = a / b;
     }
-    document.getElementById('result').textContent = `result: ${r ?? 'something went wrong!'}`;
+    document.getElementById('result').textContent = `result: ${r !== 0? r || 'something went wrong!' : 0}`; 
+    // Q: Is this last line crap?
+    // A: Probably... 
+    // A: controller.js has a better way to do this :)
 }
 
 document.getElementById('sum').onclick = () => operate('+');
