@@ -1,8 +1,8 @@
-import {Nav} from 'components/Nav';
+import {Index} from 'components/Structure';
 
 
 export const Layout = ({children}) => (
   <div className="main">
-    <Nav/>
+    <Index/>
   </div>
 )

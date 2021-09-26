@@ -1,4 +1,6 @@
-import React from 'react';
+import React    from 'react';
+import {Events} from 'components/Events/Events';
+
 
 export function Home() {
   return (
@@ -10,9 +12,11 @@ export function Home() {
             jumbotron and three supporting pieces of content. Use it as a starting point to create something more
             unique.</p>
           <p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-        <hr/>
+          <hr/>
         </div>
       </div>
+
+      <Events/>
 
       <div className="container bg-dark text-light"
            style={{

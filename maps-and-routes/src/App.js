@@ -11,9 +11,10 @@ import {CarDetail} from 'pages/Car/Detail';
 import {Contact}   from 'pages/Contact';
 import {Home}      from 'pages/Home';
 import {NotFound}  from 'pages/NotFound';
+import {Footer}    from 'components/Structure';
 import {Layout}    from 'Layout';
 
-import './App.css';
+import 'App.css';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route exact path="/contact" component={Contact}/>
         <Route component={NotFound}/>
       </Switch>
+      <Footer/>
     </HashRouter>
   );
 }
