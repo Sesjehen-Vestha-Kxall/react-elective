@@ -1,5 +1,3 @@
-// noinspection JSUnresolvedVariable
-
 import {useEffect, useState} from 'react';
 import {useParams}           from 'react-router-dom';
 import axios                 from 'axios';
@@ -12,15 +10,19 @@ export function RickDetail() {
   const [episodeList, setEpisodeList] = useState([]);
 
   useEffect(() => {
+    // first request: return an specific character
     axios
       .get(`/character/${id}`)
       .then(r1 => {
         setCharacter(r1.data);
-
+        // creates an string with format '_,_,_,_' to make a single api request
         let tmp = r1.data?.episode.map(x => x.split('/').at(-1)).join(',');
+        // second request: returns the episodes as json objects
         axios
           .get(`/episode/${tmp}`)
           .then(r2 => {
+            // sometimes data is a single object, so we need to put it in an array
+            // so that it be an iterable object with a forEach function
             setEpisodeList([].concat(r2.data));
             throw new DOMException(); // ends immediately this response handling
           }).catch(ignored => {});
